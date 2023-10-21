@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>🃏Pexeso Game 🃏</title>
   </head>
+
   <body>
-    <h1>My site!</h1>
+    <div id="game-over" class="hidden">
+      <h1>Game Over!</h1>
+      <h2 id="winner"></h2>
+      <div class="buttons">
+        <button id="game-over-back-button">Back</button>
+        <button id="play-again-button">Play again</button>
+      </div>
+    </div>
+    <button id="back-button" class="hidden">🔙</button>
+    <h1>🃏Pexeso game🃏</h1>
+    <div id="points-container" class="hidden">
+      <h3>Player<span class="point-emoji">👤</span></h3>
+      <p class="points" id="player-points">0</p>
+      <p class="points" id="computer-points">0</p>
+      <h3><span class="point-emoji">🖥️</span>Computer</h3>
+    </div>
+    <div class="main-container">
+      <h2 class="info-text">Select deck size:</h2>
+      <!-- <label for="">Please select the number of cards</label> -->
+      <div id="game-init-container">
+        <input type="radio" name="card-radio" id="card-8" value="8" />
+        <label for="card-8"></label>
+        <input type="radio" name="card-radio" id="card-16" value="16" />
+        <label for="card-16"></label>
+        <input type="radio" name="card-radio" id="card-32" value="32" />
+        <label for="card-32"></label>
+      </div>
+
+      <div id="game-mode">
+        <input type="radio" name="mode-radio" id="easy" value="easy" />
+        <label for="easy"></label>
+        <input type="radio" name="mode-radio" id="hard" value="hard" />
+        <label for="hard"></label>
+      </div>
+
+      <button id="lets-play-button" onclick="startGame()">
+        Lets play!<br /><span id="game-logo">🎮</span>
+      </button>
+      <p id="error-msg" class="info-text"></p>
+
+      <div id="playboard" class="hidden">
+        <!-- The javascript method generates here the cards -->
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
