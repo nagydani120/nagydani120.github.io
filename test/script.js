@@ -6,5 +6,7 @@ function generate() {
 
   var result = Array.from(x.matchAll(regex));
 
+  console.log(result);
+
   document.getElementById("output").innerHTML = result.join(";");
 }
